@@ -19,7 +19,7 @@ const HeaderStyle = styled.header`
   }
 
   @media (max-width: 1024px) {
-    padding: 20px;
+    
     img {
       max-width: 8rem;
     }
@@ -37,7 +37,6 @@ const HeaderStyle = styled.header`
   }
 
   @media (max-width: 427px) {
-    padding: 10px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -65,7 +64,6 @@ const ContainerButtons = styled.section`
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    margin-left: 50px;
   }
 `;
 
@@ -90,17 +88,16 @@ const H3 = styled.h3`
 `;
 
 const H4 = styled.h3`
-  max-width: 100vw;
   font-size: 1.2rem;
   font-weight: 500;
   text-align: center;
   color: #ffffff;
-  margin: 2px 0;
   background-color: #000000;
-  padding: 10px 0;
+  
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%; /* Ensure it takes up full width of the parent container */
 
   @media (max-width: 1024px) {
     font-size: 1rem;
