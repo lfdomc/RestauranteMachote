@@ -53,6 +53,7 @@ const HeaderStyle = styled.header`
 
 const ContainerButtons = styled.section`
   display: flex;
+  flex-direction: column;
   gap: 25px;
   padding-right: 51.15px;
   align-items: center;
@@ -92,6 +93,12 @@ const H3 = styled.h3`
   }
 `;
 
+const Section=styled.section`
+display:flex;
+flex-direction: column;
+flex-wrap:wrap;
+
+`
 const Footer = () => {
 
   const { logo } = useContext(GlobalContext);
@@ -103,8 +110,12 @@ const Footer = () => {
       </Link>
 
       <ContainerButtons>
+        <Section>
         <H3>Telefono: +506 7045-3129</H3>
         <H3>Email: deliciasexpress2209@gmail.com</H3>
+        </Section>
+        
+        <H3>Copyright © 2025 Diseñado por Temsa | Todos los Derechos Reservados.</H3>
       </ContainerButtons>
     </HeaderStyle>
   );

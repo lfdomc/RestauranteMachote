@@ -6,11 +6,12 @@ import BetterBanner from "../components/BetterBanner/BetterBanner";
 const Section = styled.section`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   flex-wrap: wrap;
+  width: 100vw; // Asegura que ocupe todo el ancho disponible
+  
 
   @media (max-width: 450px) {
-    display: none;  // Oculta la sección en pantallas menores a 450px
+    display: none;
   }
 `;
 

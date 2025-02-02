@@ -4,6 +4,11 @@ import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const SliderWrapper = styled.div`
+  width: 100%;
+  overflow: hidden; // Evita cualquier espacio adicional
+`;
+
 const SlideContainer = styled.div`
   display: flex;
   align-items: center;
@@ -28,53 +33,47 @@ const settings = {
   dots: true,
   infinite: true,
   speed: 4800,
-  slidesToShow: 3, // Mostrar 3 imágenes al mismo tiempo
+  slidesToShow: 3,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 4000,
+  centerMode: false, // Deshabilita el centrado que puede agregar margen
+  variableWidth: false, // Asegura que los slides se ajusten bien
   responsive: [
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 2, // En pantallas medianas, muestra 2 imágenes
+        slidesToShow: 2,
       },
     },
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 1, // En móviles, solo 1 imagen
+        slidesToShow: 1,
       },
     },
   ],
 };
 
 const Scroll1: React.FC = () => (
-  <Slider {...settings}>
-    <SlideContainer>
-      <Img src="/image/ktrina/sopas.jpg" alt="Formulario" />
-    </SlideContainer>
-    <SlideContainer>
-      <Img src="/image/ktrina/tacobirria.jpg" alt="Imagen 2" />
-    </SlideContainer>
-    <SlideContainer>
-      <Img src="/image/ktrina/tacotico.jpg" alt="Imagen 3" />
-    </SlideContainer>
-    <SlideContainer>
-      <Img src="/image/ktrina/nachos.jpg" alt="Imagen 4" />
-    </SlideContainer>
-    <SlideContainer>
-      <Img src="/image/ktrina/ktripapas.jpg" alt="Imagen 4" />
-    </SlideContainer>
-    <SlideContainer>
-      <Img src="/image/ktrina/fajitas.jpg" alt="Imagen 4" />
-    </SlideContainer>
-    <SlideContainer>
-      <Img src="/image/ktrina/ktriburguer.jpg" alt="Imagen 4" />
-    </SlideContainer>
-    <SlideContainer>
-      <Img src="/image/ktrina/patacones.jpg" alt="Imagen 4" />
-    </SlideContainer>
-  </Slider>
+  <SliderWrapper>
+    <Slider {...settings}>
+      {[
+        "sopas",
+        "tacobirria",
+        "tacotico",
+        "nachos",
+        "ktripapas",
+        "fajitas",
+        "ktriburguer",
+        "patacones",
+      ].map((img, index) => (
+        <SlideContainer key={index}>
+          <Img src={`/image/ktrina/${img}.jpg`} alt={`Imagen ${index + 1}`} />
+        </SlideContainer>
+      ))}
+    </Slider>
+  </SliderWrapper>
 );
 
 export default Scroll1;
