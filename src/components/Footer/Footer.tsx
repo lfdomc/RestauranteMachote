@@ -9,16 +9,13 @@ const HeaderStyle = styled.header`
   padding-left: 51.15px;
   display: flex;
   justify-content: center;
-  
   background-color: #f0f0f0c7;
   flex-direction: column;
   align-items: center;
   
-
   img {
     max-width: 6.528rem;
     max-height: 6.5rem;
-    
     border-radius: 30px;
   }
 
@@ -36,7 +33,7 @@ const HeaderStyle = styled.header`
     img {
       max-width: 80%;
       margin-bottom: 15px;
-      margin-left:25px;
+      margin-left: 25px;
     }
   }
 
@@ -68,7 +65,7 @@ const ContainerButtons = styled.section`
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    margin-left:50px;
+    margin-left: 50px;
   }
 `;
 
@@ -78,31 +75,29 @@ const H3 = styled.h3`
   text-align: center;
   color: #000205;
   margin: 2px 0;
- 
 
   @media (max-width: 1024px) {
-    font-size: 1rem;  
+    font-size: 1rem;
   }
 
   @media (max-width: 768px) {
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 
   @media (max-width: 427px) {
-    font-size: 1rem;  
+    font-size: 1rem;
   }
 `;
 
-const Section=styled.section`
-display:flex;
-flex-direction: column;
-flex-wrap:wrap;
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+`;
 
-`
 const Footer = () => {
-
   const { logo } = useContext(GlobalContext);
-  
+
   return (
     <HeaderStyle>
       <Link to="/">
@@ -111,11 +106,15 @@ const Footer = () => {
 
       <ContainerButtons>
         <Section>
-        <H3>Telefono: +506 7045-3129</H3>
-        <H3>Email: deliciasexpress2209@gmail.com</H3>
+          <H3>Telefono: +506 7045-3129</H3>
+          <H3>Email: deliciasexpress2209@gmail.com</H3>
         </Section>
         
-        <H3>Copyright © 2025 Diseñado por Temsa | Todos los Derechos Reservados.</H3>
+        <H3>
+
+          <a href="https://www.crtemsa.com" target="_blank" rel="noopener noreferrer">Copyright © 2025 Diseñado por Temsa </a> 
+          | Todos los Derechos Reservados.
+        </H3>
       </ContainerButtons>
     </HeaderStyle>
   );
