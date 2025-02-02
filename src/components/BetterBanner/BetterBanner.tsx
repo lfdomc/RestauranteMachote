@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const MainSection = styled.section<{ $bgmain: string, $flexdirection: string, $bgimage: string }>`
     display: flex;
@@ -14,14 +15,14 @@ const MainSection = styled.section<{ $bgmain: string, $flexdirection: string, $b
 
     @media (max-width: 768px) {
         flex-direction: column-reverse;
-        padding: 0;  /* Elimina padding lateral en pantallas pequeñas */
+        padding: 0;
     }
 `;
 
 const SectionA = styled.section`
     display: flex;
     justify-content: center;
-    align-items: center; /* Centra la imagen verticalmente */
+    align-items: center;
     width: 50%;
     padding-top: 10px;
 
@@ -72,11 +73,11 @@ const SectionB = styled.section`
         width: 100%;
         align-items: center;
         text-align: center;
-        padding: 10px;  /* Reduce padding en móviles */
+        padding: 10px;
     }
 `;
 
-const SectionC = styled.section`
+const SectionC = styled.button`
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -86,6 +87,7 @@ const SectionC = styled.section`
     border-radius: 20px;
     padding: 20px;
     margin-top: 15px;
+    text-align: center; /* Justifica el texto */
 
     h1 {
         font-size: clamp(2.5rem, 5vw, 4rem);
@@ -102,8 +104,8 @@ const SectionC = styled.section`
         align-items: center;
         text-align: center;
         gap: 5px;
-        width: 100%;  /* Ocupa todo el ancho */
-        padding: 10px;
+        width: 100%;
+        padding: 5px;
     }
 `;
 
@@ -123,7 +125,7 @@ const SectionD = styled.section`
 const Button = styled.button<{ $btColor: string, $fbtColor: string, $hbtColor: string }>`
     display: flex;
     align-items: center;
-    justify-content: center; /* Centra el texto e imagen */
+    justify-content: center;
     gap: 10px;
     min-width: 250px;
     background-color: ${(props) => props.$btColor};
@@ -213,24 +215,28 @@ const BetterBanner: React.FC<BannerProps> = ({
             <SectionB>
                 <h1>{title}</h1>
                 <h2>{text}</h2>
+                <Link to="/servicios">
                 <SectionC>
                     <h1>{text2}</h1>
                     <h3>{text3}</h3>
                 </SectionC>
+                </Link>
                 <SectionD>
                     <Button $btColor={btColor} $hbtColor={hbtColor} $fbtColor={fbtColor} onClick={btonClick}>
                         {btimage && <img src={btimage} alt="boton" />}
                         {textbutton}
                     </Button>
-                    <Button2 
-                        $btColor={bt2Color} 
-                        $hbtColor={hbt2Color} 
-                        $fbtColor={fb2tColor} 
-                        onClick={bt2onClick} 
-                        $bt2display={bt2display}>
-                        {btimage2 && <img src={btimage2} alt="boton" />}
-                        {textbutton2}
-                    </Button2>
+                    
+                        <Button2 
+                            $btColor={bt2Color} 
+                            $hbtColor={hbt2Color} 
+                            $fbtColor={fb2tColor} 
+                            onClick={bt2onClick} 
+                            $bt2display={bt2display}>
+                            {btimage2 && <img src={btimage2} alt="boton" />}
+                            {textbutton2}
+                        </Button2>
+                    
                 </SectionD>
             </SectionB>
         </MainSection>
