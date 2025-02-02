@@ -107,7 +107,7 @@ const SubmitButton = styled.input`
 `;
 
 export const FormContact = () => {
-  const notify = () => toast("Formulario Enviado!");
+  
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
