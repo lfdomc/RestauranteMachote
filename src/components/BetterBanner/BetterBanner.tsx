@@ -33,7 +33,7 @@ const SectionA = styled.section<{ $imgflexdirection?: string }>`
     img {
         max-width: 80%;
         height: auto;
-        border-radius: 80px;
+        border-radius: 60px;
         padding-bottom: 20px;
     }
 
