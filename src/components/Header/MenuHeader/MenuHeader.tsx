@@ -79,12 +79,18 @@ const Hamburger = styled.div`
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
-
+  &:hover {
+    
+    
+    color: #430c61;
+    transform: scale(1.1);
+  }
   span {
     width: 35px;
     height: 6px;
-    background-color: #5f1153;
+    background-color: #e8dae6;
     border-radius: 5px;
+    
   }
 
   @media (max-width: 554px) {
