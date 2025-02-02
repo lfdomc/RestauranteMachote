@@ -5,14 +5,13 @@ import { GlobalContext } from "../../context/GlobalContext";
 
 const HeaderStyle = styled.header`
   padding-top: 10.5px;
-  padding-bottom: 10.5px;
-  padding-left: 51.15px;
+
   display: flex;
   justify-content: center;
   background-color: #f0f0f0c7;
   flex-direction: column;
   align-items: center;
-  
+
   img {
     max-width: 6.528rem;
     max-height: 6.5rem;
@@ -52,9 +51,10 @@ const ContainerButtons = styled.section`
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding-right: 51.15px;
+  
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
 
   @media (max-width: 768px) {
     gap: 5px;
@@ -89,10 +89,47 @@ const H3 = styled.h3`
   }
 `;
 
+const H4 = styled.h3`
+  max-width: 100vw;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  margin: 2px 0;
+  background-color: #000000;
+  padding: 10px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 427px) {
+    font-size: 1rem;
+  }
+`;
+
 const Section = styled.section`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+`;
+
+const Section2 = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: black;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0; /* Ensure no padding */
+  margin: 0; /* Ensure no margin */
 `;
 
 const Footer = () => {
@@ -109,12 +146,14 @@ const Footer = () => {
           <H3>Telefono: +506 7045-3129</H3>
           <H3>Email: deliciasexpress2209@gmail.com</H3>
         </Section>
-        
-        <H3>
-
-          <a href="https://www.crtemsa.com" target="_blank" rel="noopener noreferrer">Copyright © 2025 Diseñado por Temsa </a> 
-          | Todos los Derechos Reservados.
-        </H3>
+        <Section2>
+          <H4>
+            <a href="https://www.crtemsa.com" target="_blank" rel="noopener noreferrer">
+              Copyright © 2025 Diseñado por Temsa
+            </a> 
+            | Todos los Derechos Reservados.
+          </H4>
+        </Section2>
       </ContainerButtons>
     </HeaderStyle>
   );
