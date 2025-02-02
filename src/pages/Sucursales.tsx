@@ -9,6 +9,7 @@ const Servicios = () => {
       <BetterBanner
         //MainProps
         flexdirection="row-reverse"
+        imgflexdirection="display"
         bgmain=" #c57f4d9f"
         bgimage=""
         //Imagen Props
@@ -41,6 +42,7 @@ const Servicios = () => {
 <BetterBanner
         //MainProps
         flexdirection="row"
+        imgflexdirection="display"
         bgmain=" #43be76cb"
         bgimage=""
         //Imagen Props
@@ -73,6 +75,7 @@ const Servicios = () => {
         <BetterBanner
         //MainProps
         flexdirection="row-reverse"
+        imgflexdirection="display"
         bgmain=" #4090c6b8"
         bgimage=""
         //Imagen Props

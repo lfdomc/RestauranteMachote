@@ -27,13 +27,14 @@ const Home = () => {
       <BetterBanner
         //MainProps
         flexdirection="row"
+        imgflexdirection="none"
         bgmain=" #f0e8f390"
         bgimage=""
         //Imagen Props
         image="/image/ktrina/ktrina1.png"
         //imonClick={() => window.location.href = "https://wa.me/50670453129"}
         //Titulo Props
-        title="¡La verdadera comida mexicana!"
+        title="¡La Verdadera Comida Mexicana!"
         text="Tenemos deliciosas comidas a precios super accesibles. Contamos con servicio express o bien pueden pasar a retirar."
         //Texto Props
         text2="3"

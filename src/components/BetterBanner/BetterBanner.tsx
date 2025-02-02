@@ -19,18 +19,33 @@ const MainSection = styled.section<{ $bgmain: string, $flexdirection: string, $b
     }
 `;
 
-const SectionA = styled.section`
+const imagenUp = "/image/ktrina/ktrina2.png";
+
+const SectionA = styled.section<{ $imgflexdirection?: string }>`
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
     padding-top: 10px;
+   
 
     img {
         max-width: 80%;
         height: auto;
-        border-radius: 190px;
-        padding-bottom: 10px;
+        border-radius: 80px;
+        padding-bottom: 20px;
+    }
+
+    .imagenUp {
+        display: ${(props) => props.$imgflexdirection};
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height:auto;
+        max-width: 700px;
     }
 
     @media (max-width: 768px) {
@@ -39,21 +54,16 @@ const SectionA = styled.section`
             max-width: 90%;
         }
     }
-
-    &:hover {
-        transform: scale(1.02);
-        filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
-    }
 `;
 
 const SectionB = styled.section`
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     font-family: "Dosis", sans-serif;
-    text-align: start;
+    text-align: center;
     padding: 20px 100px 20px 50px;
 
     h1 {
@@ -82,21 +92,27 @@ const SectionC = styled.button`
     flex-direction: row;
     align-items: center;
     gap: 20px;
-    background-color: #f3edf368;
-    width: 70%;
+    background-color: #f3eded68;
+   
     border-radius: 20px;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-top: 15px;
-    text-align: center; /* Justifica el texto */
+    text-align: center; 
+    
 
     h1 {
         font-size: clamp(2.5rem, 5vw, 4rem);
         font-weight: 900;
+        text-align: center;
     }
 
     h3 {
         font-size: clamp(1.2rem, 3vw, 2rem);
         font-weight: 700;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     @media (max-width: 768px) {
@@ -111,11 +127,12 @@ const SectionC = styled.button`
 
 const SectionD = styled.section`
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 70%;
-    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center; 
+    justify-content: center; 
+    gap: 20px;
+    width: 100%;
 
     @media (max-width: 768px) {
         width: 100%;
@@ -150,11 +167,11 @@ const Button = styled.button<{ $btColor: string, $fbtColor: string, $hbtColor: s
     }
 
     @media (max-width: 768px) {
-        width: 100%;
+        width: 20%;
     }
 `;
 
-const Button2 = styled(Button)<{ $bt2display: string }>`
+const Button2 = styled(Button) <{ $bt2display: string }>`
     display: ${(props) => props.$bt2display};
 `;
 
@@ -181,6 +198,7 @@ interface BannerProps {
     textbutton2: string;
     hbt2Color: string;
     bt2onClick?: () => void;
+    imgflexdirection?: string;
 }
 
 const BetterBanner: React.FC<BannerProps> = ({
@@ -198,7 +216,7 @@ const BetterBanner: React.FC<BannerProps> = ({
     btimage = "",
     bgimage = "",
     btonClick,
-    imonClick,
+
     btimage2 = "",
     bt2display,
     bt2Color,
@@ -206,37 +224,43 @@ const BetterBanner: React.FC<BannerProps> = ({
     textbutton2,
     hbt2Color,
     bt2onClick,
+    imgflexdirection,
 }) => {
     return (
         <MainSection $bgmain={bgmain} $flexdirection={flexdirection} $bgimage={bgimage}>
-            <SectionA>
-                <img src={image} alt="Imagen" onClick={imonClick} />
+            <SectionA $imgflexdirection={imgflexdirection}>
+                <img className="imagenUp" src={imagenUp} alt="Imagen Up" />
+                <img src={image} alt="Imagen" />
             </SectionA>
             <SectionB>
                 <h1>{title}</h1>
                 <h2>{text}</h2>
                 <Link to="/servicios">
-                <SectionC>
-                    <h1>{text2}</h1>
-                    <h3>{text3}</h3>
-                </SectionC>
+                    <SectionC>
+                        <h1>{text2}</h1>
+                        <h3>{text3}</h3>
+                    </SectionC>
                 </Link>
                 <SectionD>
-                    <Button $btColor={btColor} $hbtColor={hbtColor} $fbtColor={fbtColor} onClick={btonClick}>
+                    <Button
+                        $btColor={btColor}
+                        $hbtColor={hbtColor}
+                        $fbtColor={fbtColor}
+                        onClick={btonClick}>
                         {btimage && <img src={btimage} alt="boton" />}
                         {textbutton}
                     </Button>
-                    
-                        <Button2 
-                            $btColor={bt2Color} 
-                            $hbtColor={hbt2Color} 
-                            $fbtColor={fb2tColor} 
-                            onClick={bt2onClick} 
-                            $bt2display={bt2display}>
-                            {btimage2 && <img src={btimage2} alt="boton" />}
-                            {textbutton2}
-                        </Button2>
-                    
+
+                    <Button2
+                        $btColor={bt2Color}
+                        $hbtColor={hbt2Color}
+                        $fbtColor={fb2tColor}
+                        onClick={bt2onClick}
+                        $bt2display={bt2display}>
+                        {btimage2 && <img src={btimage2} alt="boton" />}
+                        {textbutton2}
+                    </Button2>
+
                 </SectionD>
             </SectionB>
         </MainSection>
