@@ -42,7 +42,7 @@ const Home = () => {
         btColor="#2e0143"
         fbtColor="white"
         hbtColor="#e32f02"
-        btonClick={() => window.location.href = "https://wa.me/50670453129"}
+        //btonClick={() => window.location.href = ""}
         //btimage="/image/ktrina/calabera.png"
 
         //Button2 Props

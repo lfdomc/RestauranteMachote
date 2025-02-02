@@ -29,7 +29,7 @@ const settings = {
   infinite: true,
   speed: 4800,
   slidesToShow: 3, // Mostrar 3 imágenes al mismo tiempo
-  slidesToScroll: 3,
+  slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 4000,
   responsive: [
