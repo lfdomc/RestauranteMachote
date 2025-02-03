@@ -95,14 +95,14 @@ const SectionC = styled.button`
     background-color: #f3eded68;
    
     border-radius: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
     margin-top: 15px;
     text-align: center; 
     
 
     h1 {
-        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-size: clamp(2rem, 3vw, 2rem);
         font-weight: 900;
         text-align: center;
     }
@@ -131,7 +131,7 @@ const SectionD = styled.section`
     flex-wrap: wrap;
     align-items: center; 
     justify-content: center; 
-    gap: 20px;
+    gap: 50px;
     width: 100%;
 
     @media (max-width: 768px) {
@@ -141,15 +141,16 @@ const SectionD = styled.section`
 
 const Button = styled.button<{ $btColor: string, $fbtColor: string, $hbtColor: string }>`
     display: flex;
+    flex-direction:column;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    min-width: 250px;
+    min-width: 100px;
     background-color: ${(props) => props.$btColor};
     color: ${(props) => props.$fbtColor};
-    font-size: clamp(2rem, 2.5vw, 1.5rem);
+    font-size: clamp(1rem, 1.5vw, 1rem);
     font-weight: bold;
-    padding: 10px 20px;
+    padding: 10px 10px 10px 10px;
     border: none;
     border-radius: 10px;
     margin-top: 15px;
@@ -163,7 +164,7 @@ const Button = styled.button<{ $btColor: string, $fbtColor: string, $hbtColor: s
     }
 
     img {
-        width: 50px;
+        width: 40px;
     }
 
     @media (max-width: 768px) {
