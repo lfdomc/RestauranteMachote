@@ -10,12 +10,14 @@ const HeaderStyle = styled.header`
   background-color: #f0f0f0c7;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
   img {
     max-width: 6.528rem;
     max-height: 6.5rem;
     border-radius: 30px;
     transition: max-width 0.3s ease, max-height 0.3s ease;
+    padding-left:10px;
   }
 
   @media (max-width: 1024px) {
@@ -33,7 +35,7 @@ const HeaderStyle = styled.header`
 
   @media (max-width: 427px) {
     img {
-      max-width: 70%;
+      max-width: 90%;
     }
   }
 `;
@@ -44,6 +46,7 @@ const ContainerButtons = styled.section`
   gap: 25px;
   align-items: center;
   width: 100%;
+  text-align: center;
 
   @media (max-width: 768px) {
     gap: 15px;
@@ -81,11 +84,15 @@ const H4 = styled.h4`
   color: #ffffff;
   background-color: #000000;
   padding: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 100%; 
+  a {
+    text-align: center;
+    width: 100%;
+  }
 
   @media (max-width: 1024px) {
     font-size: 1.1rem;
@@ -107,12 +114,14 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 `;
 
 const Section2 = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: black;
   width: 100%;
   padding: 0;
@@ -130,17 +139,14 @@ const Footer = () => {
 
       <ContainerButtons>
         <Section>
-          <H3>Telefono: +506 7045-3129</H3>
+          <H3>Teléfono: +506 7045-3129</H3>
           <H3>Email: deliciasexpress2209@gmail.com</H3>
         </Section>
         <Section2>
           <H4>
             <a href="https://www.crtemsa.com" target="_blank" rel="noopener noreferrer">
               Copyright © 2025 Diseñado por Temsa
-            </a> 
-            
-           
-            
+            </a>
           </H4>
         </Section2>
       </ContainerButtons>
