@@ -131,7 +131,7 @@ const SectionD = styled.section`
     flex-wrap: wrap;
     align-items: center; 
     justify-content: center; 
-    gap: 50px;
+    gap: 20px;
     width: 100%;
 
     @media (max-width: 768px) {
@@ -145,10 +145,10 @@ const Button = styled.button<{ $btColor: string, $fbtColor: string, $hbtColor: s
     align-items: center;
     justify-content: center;
     gap: 10px;
-    min-width: 100px;
+    min-width: 200px;
     background-color: ${(props) => props.$btColor};
     color: ${(props) => props.$fbtColor};
-    font-size: clamp(1rem, 1.5vw, 1rem);
+    font-size: clamp(2rem, 1.5vw, 1rem);
     font-weight: bold;
     padding: 10px 10px 10px 10px;
     border: none;
